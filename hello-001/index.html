@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <style>
+      /* css 를 시작할때 항상 clear 코드를 작성하자 */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        height: 100vh;
+      }
+      body {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      section {
+        flex: 1;
+      }
+
+      header {
+        background-color: green;
+        color: white;
+        text-align: center;
+        padding: 1.5rem;
+      }
+      div {
+        /*
+        div box 의 display 속성은 block 형이다
+        block 형 속성을 inline 으로 변경할 수 있다.
+        inline 으로 변경하면 width, height 등의 속성이 적용되지 않는다
+        */
+        display: inline;
+
+        /*
+        div box 의 display 속성을 inlie-block 으로 변경하면
+        block 성질과 inline 성질을 동시에 보이게 된다
+        실제 보여지는 영역만 자신의 구역으로 하고
+        width, height 가 적용되는 성질을 갖는다
+        하지만 이 속성도 layout 만들때 여러가지 불편함이 있다.
+        */
+        display: inline-block;
+        border: 1px solid blue;
+        padding: 1rem;
+        width: 30%;
+        margin: 5px auto;
+      }
+
+      div:nth-of-type(1) {
+        border: 10px solid green;
+      }
+      div:nth-of-type(2) {
+        background-color: #959567;
+      }
+
+      div:hover {
+        cursor: pointer;
+        background-color: #ccc;
+      }
+      nav {
+        background-color: black;
+        color: white;
+      }
+
+      nav ul {
+        /*
+        display:flex 속성은 css2 에서 새롭게 도입된 속성이다
+        부모 box 를 flex 로 설정하면, 자식 box 들은 모두 inline-block 과
+        같은 성질을 갖게되고, 자유롭게 layout 을 설정할수 있다
+
+        자식 box 들을 부모 box 내부에서 가로방향으로 배치하고자 할때
+        주로 사용하는 속성이다.
+        */
+        display: flex;
+        list-style: none;
+      }
+
+      nav li {
+        padding: 1rem;
+      }
+      nav li:hover {
+        cursor: pointer;
+        background-color: #777;
+      }
+      nav li:nth-of-type(4) {
+        margin-left: auto;
+      }
+
+      footer {
+        background-color: #ccc;
+        text-align: center;
+        padding: 0.7rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>반갑습니다</h1>
+    </header>
+    <nav>
+      <ul>
+        <li>Home</li>
+        <li>공지사항</li>
+        <li>자유게시판</li>
+        <li>로그인</li>
+        <li>회원가입</li>
+      </ul>
+    </nav>
+    <section>
+      <div>박스1</div>
+      <div>박스2</div>
+      <div>박스3</div>
+    </section>
+    <footer>
+      <address>CopyRight &copy; callor@callor.com</address>
+    </footer>
+  </body>
+</html>
