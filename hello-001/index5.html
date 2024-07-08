@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <style>
+      div {
+        width: 50%;
+        border: 1px solid blue;
+        margin: 5px;
+      }
+      div:nth-of-type(1) {
+        background-color: #ddd;
+      }
+      div#div2 {
+        background-color: #aaa;
+      }
+      #div3 {
+        border: 1px solid green;
+      }
+      .div4 {
+        background-color: #d1d1d1;
+      }
+    </style>
+  </head>
+  <body>
+    <div>박스1</div>
+    <div id="div2">박스2</div>
+    <div id="div3">박스3</div>
+    <div class="div4">박스4</div>
+    <div class="div4">박스5</div>
+    <script>
+      /*
+      화면(document)에 있는 여러 요소(selector)들 중에
+      id 가 div2 인(#div2) 요소를 JS 에서 사용할수 있도록
+      객체변수로 변환하기
+      */
+      const div2 = document.querySelector("#div2");
+      const div3 = document.querySelector("div#div3");
+      const div4 = document.querySelectorAll("div.div4");
+
+      const onClickHandler1 = (e) => {
+        div2.innerHTML = "대한민국만세";
+      };
+
+      const onClickHanlder2 = function (e) {
+        div3.style.backgroundColor = "yellow";
+        div3.style.color = "blue";
+        div3.style.fontSize = "30px";
+      };
+      function onClickHandler3(e) {
+        div4[0].style.backgroundColor = "#aaa";
+        div4[1].style.backgroundColor = "blue";
+      }
+      div2.addEventListener("click", onClickHandler1);
+      div3.addEventListener("click", onClickHanlder2);
+      div4[0].addEventListener("click", onClickHandler3);
+      div4[1].addEventListener("click", onClickHandler3);
+    </script>
+  </body>
+</html>
