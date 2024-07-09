@@ -20,3 +20,9 @@ nav.main li:hover {
   border-bottom: 3px solid yellow;
   cursor: pointer;
 }
+
+@media (max-width: 1000px) {
+  nav.main ul {
+    flex-direction: column;
+  }
+}
