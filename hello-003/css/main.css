@@ -1,0 +1,50 @@
+header {
+  background-color: #777;
+  color: white;
+  text-align: center;
+  padding: 1.3rem;
+  text-shadow: 1px 1px 1px black;
+}
+
+section.main {
+  background-image: url("../images/paper.gif");
+  background-repeat: repeat;
+  text-align: center;
+
+  display: flex;
+  /* 
+  flex box 내부의 item 들은 기본적으로 가로방향으로 한줄로 표현이 된다
+  화면의 가로크기가 조절되는 경우 적당한 크기로 줄바바꿈이 되어
+  여러줄에 표현하도록 설정하는 것
+  */
+  flex-wrap: wrap;
+
+  /* item 들을 space 를 적당히 조절하여 균형잡히도록 배치하기 */
+  justify-content: space-between;
+
+  article {
+    border: 1px solid #c0c0c0;
+    width: 200px;
+    margin: 10px;
+    padding: 3px;
+    border-radius: 10px;
+
+    img {
+      width: 95%;
+      border-radius: 10px;
+    }
+    figcaption {
+      font-weight: bold;
+      color: blue;
+      /* figcaption:hover */
+      &:hover {
+        color: #888;
+      }
+    }
+  }
+}
+
+footer {
+  background-color: #aaa;
+  text-align: center;
+}
