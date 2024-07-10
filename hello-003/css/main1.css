@@ -1,5 +1,8 @@
 header {
-  background-color: #777;
+  background-image: url("../images/header.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 200%;
+  background-position: center;
   color: white;
   text-align: center;
   padding: 3rem;
@@ -20,24 +23,28 @@ section.main {
   flex-wrap: wrap;
 
   /* item 들을 space 를 적당히 조절하여 균형잡히도록 배치하기 */
-  justify-content: space-between;
+  justify-content: center;
 
   article {
-    border: 1px solid #c0c0c0;
     width: 200px;
-    margin: 10px;
-    padding: 3px;
-    border-radius: 10px;
+    padding: 5px;
 
     img {
       width: 95%;
       border-radius: 10px;
+      transition: 0.7s;
+      &:hover {
+        cursor: pointer;
+        opacity: 0.6;
+      }
     }
     figcaption {
       font-weight: bold;
       color: blue;
       /* figcaption:hover */
+      transition: 0.7s;
       &:hover {
+        cursor: pointer;
         color: #888;
       }
     }
