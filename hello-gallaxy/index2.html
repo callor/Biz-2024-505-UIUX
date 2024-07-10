@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <style>
+      div {
+        width: 50%;
+        height: 200px;
+        border: 1px solid green;
+        margin: 5px auto;
+      }
+
+      div.show {
+        background-color: red;
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+        border: 3px solid blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="div box1">박스1</div>
+    <div class="div box2">박스2</div>
+    <div class="div box3">박스3</div>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const div1 = document.querySelector("div.box1");
+      const div2 = document.querySelector("div.box2");
+      const div3 = document.querySelector("div.box3");
+
+      const onClickHandler1 = () => {
+        div2.style.backgroundColor = "blue";
+        div2.style.color = "yellow";
+        div2.style.fontSize = "20px";
+        div2.style.fontWeight = "900";
+      };
+      div1.addEventListener("click", onClickHandler1);
+
+      let toggle = true;
+      const onClickHandler2 = () => {
+        if (toggle) {
+          div3.classList.add("show");
+        } else {
+          div3.classList.remove("show");
+        }
+        toggle = !toggle;
+      };
+      div2.addEventListener("click", onClickHandler2);
+
+      const onClickHandler3 = () => {
+        div1.classList.toggle("show");
+      };
+      div3.addEventListener("click", onClickHandler3);
+    });
+  </script>
+</html>
